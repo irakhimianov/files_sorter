@@ -10,7 +10,7 @@ extensions = {
               'cda'],
 
     'image': ['jpg', 'png', 'bmp', 'ai', 'psd', 'ico', 'jpeg', 'ps', 'svg', 'tif',
-              'tiff'],
+              'tiff', 'cdr', 'eps', 'HEIC', ],
 
     'archive': ['zip', 'rar', '7z', 'z', 'gz', 'rpm', 'arj', 'pkg', 'deb'],
 
@@ -30,5 +30,7 @@ extensions = {
 
     'bat': ['bat'],
 
-    'apk': ['apk']
+    'apk': ['apk'],
+
+    'blueprints': ['dwg', 'dxf', 'cdw', 'frw', 'kdw', 'spw', 'a3d', 't3d', 'm3d']
 }
