@@ -43,7 +43,7 @@ def sort_files(path: Path) -> None:
     files = get_file_names(path)
     extensions_list = list(extensions.items())
     for file in files:
-        file_extension = Path(file).suffix[1:]
+        file_extension = Path(file).suffix[1:].lower()
         file_name = Path(file).name
 
         for val in extensions_list:

@@ -10,11 +10,12 @@ extensions = {
               'cda'],
 
     'image': ['jpg', 'png', 'bmp', 'ai', 'psd', 'ico', 'jpeg', 'ps', 'svg', 'tif',
-              'tiff', 'cdr', 'eps', 'HEIC', ],
+              'tiff', 'cdr', 'cdrt', 'eps', 'heic', 'jfif'],
 
     'archive': ['zip', 'rar', '7z', 'z', 'gz', 'rpm', 'arj', 'pkg', 'deb'],
 
-    'text': ['pdf', 'txt', 'doc', 'docx', 'rtf', 'tex', 'wpd', 'odt'],
+    'text': ['pdf', 'txt', 'doc', 'docx', 'rtf', 'tex', 'wpd', 'odt', 'pub', 'vsd',
+             'fb2'],
 
     '3d': ['stl', 'obj', 'fbx', 'dae', '3ds', 'iges', 'step'],
 
@@ -26,7 +27,7 @@ extensions = {
 
     'gif': ['gif'],
 
-    'exe': ['exe'],
+    'exe': ['exe', 'msi'],
 
     'bat': ['bat'],
 
