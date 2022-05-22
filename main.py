@@ -1,6 +1,7 @@
 import sys
-from pathlib import Path
 from extensions import extensions
+from pathlib import Path
+from time import time
 
 
 def get_listdir(path: Path) -> list:
@@ -13,6 +14,10 @@ def create_folders_from(path: Path, folder_names: list) -> None:
         folder = str(folder)
         if not Path.exists(Path(path, folder)):
             Path.mkdir(Path(path, folder))
+
+
+def create_uniq_filename(prefix: str, suffix: str) -> str:
+    return f"{prefix}-{str(int(time() * 100))}.{suffix}"
 
 
 def get_subfolders_path(path: Path) -> list:
@@ -69,4 +74,3 @@ if __name__ == "__main__":
     create_folders_from(main_path, extensions)
     sort_files(main_path)
     remove_empty_folders(main_path)
-
