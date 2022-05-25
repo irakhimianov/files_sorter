@@ -54,7 +54,10 @@ def sort_files(path: Path) -> None:
         for val in extensions_list:
             if file_extension in val[1]:
                 print(f"Moving {file_name} in {val[0]} folder")
-                Path.rename(Path(path, file), Path(path, val[0], file_name))
+                try:
+                    Path.rename(Path(path, file), Path(path, val[0], file_name))
+                except FileExistsError:
+                    pass
 
 
 def remove_empty_folders(path: Path) -> None:
