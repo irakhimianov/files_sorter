@@ -17,7 +17,7 @@ def create_folders_from(path: Path, folder_names: list) -> None:
 
 
 def create_uniq_filename(prefix: str, suffix: str) -> str:
-    return f"{prefix}-{str(int(time() * 100))}.{suffix}"
+    return f"{prefix} - {str(int(time() * 100))}.{suffix}"
 
 
 def get_subfolders_path(path: Path) -> list:
@@ -57,7 +57,14 @@ def sort_files(path: Path) -> None:
                 try:
                     Path.rename(Path(path, file), Path(path, val[0], file_name))
                 except FileExistsError:
-                    pass
+                    Path.rename(
+                        Path(path, file),
+                        Path(
+                            path,
+                            val[0],
+                            create_uniq_filename(file_name.split('.')[0], file_name.split('.')[-1])
+                        )
+                    )
 
 
 def remove_empty_folders(path: Path) -> None:
@@ -73,7 +80,6 @@ if __name__ == "__main__":
         main_path = Path('\\'.join(folder for folder in sys.argv[1:]))
     else:
         main_path = Path('D:\\test')
-
     create_folders_from(main_path, extensions)
     sort_files(main_path)
     remove_empty_folders(main_path)
